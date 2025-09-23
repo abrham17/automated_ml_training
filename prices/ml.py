@@ -134,7 +134,8 @@ def load_model_or_train() -> Pipeline:
 
 def predict_price(feature_dict: Dict[str, float]) -> float:
     model = load_model_or_train()
-    row = [[feature_dict[name] for name in FEATURE_NAMES]]
-    pred = model.predict(row)[0]
+    # ColumnTransformer in the pipeline expects a pandas DataFrame with named columns
+    row_df = pd.DataFrame([[feature_dict[name] for name in FEATURE_NAMES]], columns=FEATURE_NAMES)
+    pred = model.predict(row_df)[0]
     return float(pred)
 
