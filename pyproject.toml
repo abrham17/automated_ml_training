@@ -13,6 +13,7 @@ dependencies = []
 
 [project.scripts]
 plagdetect = "plagdetect.cli:main"
+plagdetect-web = "plagdetect.webapp:main"
 
 [tool.setuptools]
 packages = ["plagdetect"]

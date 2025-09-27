@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PlagDetect Web</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 24px; }
+      .container { max-width: 960px; margin: 0 auto; }
+      table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+      th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+      th { background: #f4f4f4; }
+      .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+      input[type="number"] { width: 96px; }
+      .muted { color: #666; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>PlagDetect Web</h1>
+      <p class="muted">Upload multiple files and detect similarities using shingling/winnowing.</p>
+
+      <form id="form">
+        <div class="row">
+          <input type="file" id="files" name="files" multiple required />
+          <label><input type="checkbox" name="strip_comments" /> Strip comments</label>
+          <label>k-gram <input type="number" name="k_gram" value="5" min="1" /></label>
+          <label>unit
+            <select name="unit">
+              <option value="word" selected>word</option>
+              <option value="char">char</option>
+            </select>
+          </label>
+          <label><input type="checkbox" name="winnow" checked /> Winnow</label>
+          <label>window <input type="number" name="window" value="4" min="1" /></label>
+          <label>threshold <input type="number" name="threshold" value="0.5" min="0" max="1" step="0.01" /></label>
+          <button type="submit">Analyze</button>
+        </div>
+      </form>
+
+      <div id="status"></div>
+
+      <table id="results" style="display:none">
+        <thead>
+          <tr>
+            <th>Doc A</th>
+            <th>Doc B</th>
+            <th>Similarity</th>
+            <th>Method</th>
+            <th>Overlap</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script>
+      const form = document.getElementById('form');
+      const statusEl = document.getElementById('status');
+      const table = document.getElementById('results');
+      const tbody = table.querySelector('tbody');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.textContent = 'Uploading and analyzing...';
+        table.style.display = 'none';
+        tbody.innerHTML = '';
+
+        const fd = new FormData();
+        const files = document.getElementById('files').files;
+        if (!files || files.length === 0) {
+          statusEl.textContent = 'Please select files.';
+          return;
+        }
+        for (const f of files) fd.append('files', f);
+
+        const data = new FormData(form);
+        for (const [key, value] of data.entries()) {
+          if (key !== 'files') fd.append(key, value);
+        }
+
+        try {
+          const res = await fetch('/api/analyze', { method: 'POST', body: fd });
+          if (!res.ok) throw new Error('Request failed: ' + res.status);
+          const json = await res.json();
+          statusEl.textContent = `Found ${json.count} matches`;
+          if (json.matches && json.matches.length) {
+            table.style.display = '';
+            for (const m of json.matches) {
+              const tr = document.createElement('tr');
+              tr.innerHTML = `
+                <td>${m.doc_a}</td>
+                <td>${m.doc_b}</td>
+                <td>${(m.similarity*100).toFixed(1)}%</td>
+                <td>${m.method}</td>
+                <td>${m.overlap}</td>
+              `;
+              tbody.appendChild(tr);
+            }
+          }
+        } catch (err) {
+          statusEl.textContent = 'Error: ' + err.message;
+        }
+      });
+    </script>
+  </body>
+  </html>
+

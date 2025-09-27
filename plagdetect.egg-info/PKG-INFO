@@ -57,3 +57,15 @@ Notes
 - Comment stripping is heuristic and language-agnostic; for robust results, prefer language-specific parsers.
 - Adjust `--k-gram` and `--window` based on language and assignment size.
 
+Web App
+-------
+
+Install extra deps, then run:
+
+```bash
+python3 -m pip install --break-system-packages "uvicorn[standard]" fastapi
+$HOME/.local/bin/plagdetect-web --host 0.0.0.0 --port 8000
+```
+
+Open `http://localhost:8000` and upload files to analyze.
+

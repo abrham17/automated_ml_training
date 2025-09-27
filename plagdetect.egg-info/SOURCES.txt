@@ -7,6 +7,7 @@ plagdetect/io_utils.py
 plagdetect/normalize.py
 plagdetect/similarity.py
 plagdetect/types.py
+plagdetect/webapp.py
 plagdetect.egg-info/PKG-INFO
 plagdetect.egg-info/SOURCES.txt
 plagdetect.egg-info/dependency_links.txt
