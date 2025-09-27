@@ -1,0 +1,2 @@
+[console_scripts]
+plagdetect = plagdetect.cli:main

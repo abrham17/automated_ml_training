@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=62", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plagdetect"
+version = "0.1.0"
+description = "CLI tool to detect similarities between student assignments/projects using shingling and winnowing"
+authors = [{name = "PlagDetect"}]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+plagdetect = "plagdetect.cli:main"
+
+[tool.setuptools]
+packages = ["plagdetect"]
+

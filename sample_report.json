@@ -1,0 +1,151 @@
+{
+  "matches": [
+    {
+      "doc_a": "/workspace/plagdetect/similarity.py",
+      "doc_b": "/workspace/plagdetect/types.py",
+      "similarity": 0.006329113924050633,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 1
+    },
+    {
+      "doc_a": "/workspace/plagdetect/similarity.py",
+      "doc_b": "/workspace/plagdetect/core.py",
+      "similarity": 0.016,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 4
+    },
+    {
+      "doc_a": "/workspace/plagdetect/similarity.py",
+      "doc_b": "/workspace/plagdetect/cli.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/similarity.py",
+      "doc_b": "/workspace/plagdetect/normalize.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/similarity.py",
+      "doc_b": "/workspace/plagdetect/io_utils.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/similarity.py",
+      "doc_b": "/workspace/plagdetect/__init__.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/types.py",
+      "doc_b": "/workspace/plagdetect/core.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/types.py",
+      "doc_b": "/workspace/plagdetect/cli.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/types.py",
+      "doc_b": "/workspace/plagdetect/normalize.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/types.py",
+      "doc_b": "/workspace/plagdetect/io_utils.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/types.py",
+      "doc_b": "/workspace/plagdetect/__init__.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/core.py",
+      "doc_b": "/workspace/plagdetect/cli.py",
+      "similarity": 0.01092896174863388,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 2
+    },
+    {
+      "doc_a": "/workspace/plagdetect/core.py",
+      "doc_b": "/workspace/plagdetect/normalize.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/core.py",
+      "doc_b": "/workspace/plagdetect/io_utils.py",
+      "similarity": 0.019867549668874173,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 3
+    },
+    {
+      "doc_a": "/workspace/plagdetect/core.py",
+      "doc_b": "/workspace/plagdetect/__init__.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/cli.py",
+      "doc_b": "/workspace/plagdetect/normalize.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/cli.py",
+      "doc_b": "/workspace/plagdetect/io_utils.py",
+      "similarity": 0.015037593984962405,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 2
+    },
+    {
+      "doc_a": "/workspace/plagdetect/cli.py",
+      "doc_b": "/workspace/plagdetect/__init__.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/normalize.py",
+      "doc_b": "/workspace/plagdetect/io_utils.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/normalize.py",
+      "doc_b": "/workspace/plagdetect/__init__.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    },
+    {
+      "doc_a": "/workspace/plagdetect/io_utils.py",
+      "doc_b": "/workspace/plagdetect/__init__.py",
+      "similarity": 0.0,
+      "method": "winnow(k=5,t=4,unit=word)",
+      "overlap": 0
+    }
+  ]
+}
